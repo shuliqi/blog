@@ -6,17 +6,22 @@ html{
 a:link, a:visited { text-decoration: none; }
 ul, li { list-style-type: none }
 img { border: 0; }
-body { font-size: 12px; background:url(../images/top.jpg) ; color: #5d5d5d; }
+body { font-size: 12px; /*background:url(../images/top.jpg) ;*/ color: #5d5d5d; }
 .blank { height: 5px; overflow: hidden; width: 100%; margin: auto; clear: both }
 /* header */
 header { width: 100%; margin: auto; border-bottom: #3c7a48 1px solid }
-.quotes { width: 1000px; position: relative; margin: 60px auto 120px auto; }
+.quotes { width: 100%; position: relative; /*margin: 60px auto 120px auto;*/ }
 .quotes p { text-shadow: #246640 1px 1px 1px; color: #fff; width: 330px; line-height: 26px; }
 .text5 { position: absolute; left: 0px;z-index: 10000; top: 160px; font-family: "Î¢ÈíÑÅºÚ"; font-size: 30px; color: #FFF; -webkit-box-reflect: below -3px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(white)); }/* belowÎÄ×Öµ¹Ó°·½ÏòÏòÏÂ£¬¾àÀë3px ÑÕÉ«½¥±äÓÉÉÏÍùÏÂ */
-.flower { position: absolute; right: 0; top: 60px; background: url(../images/flower.png) no-repeat; width: 173px; height: 175px; z-index: 2 }
-.flower img {  width: 135px;
-  height: 135px;
-margin: 22px 0 0 17px; display: block; }
+.flower {   position: absolute;
+  right: 204px;
+  top: 75%;
+  background: url(../images/flower.png) no-repeat;
+  width: 173px;
+  height: 175px;
+  z-index: 2; 
+}
+.flower img {  width: 135px !important;height: 135px !important;margin: 22px 0 0 17px !important; display: block; }
 /* nav */
 #nav { width: 100%; line-height: 50px; height: 50px; font-family: "Î¢ÈíÑÅºÚ"; font-size: 16px;   background: rgba(37, 156, 199, 1); text-align: center; position: relative; }
 #nav ul { width: 82%; margin: auto; background: url(../images/heart.png) left no-repeat; overflow: hidden }

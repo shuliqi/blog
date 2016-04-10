@@ -10,7 +10,6 @@
 	 	echo "这篇文章不存在";
 		exit;
 	 }
-
 	 $websql = "select * from web order by id desc limit 10";
 	 $webresult = mysql_query($websql);
 	 if ($webresult && mysql_num_rows($webresult)) {
@@ -40,7 +39,6 @@ if(mysql_num_rows($queryset_former)){ //返回记录数，并判断是否为真�
 } else {
 	$banner_former = "亲!上一篇没有了泥<br>";
 } 
-
 $queryset_later = mysql_query($sql_later); 
 	
 if(mysql_num_rows($queryset_later)){ 
@@ -67,20 +65,41 @@ if(mysql_num_rows($queryset_later)){
 <link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css"/>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/index.css"/>
+<link rel="stylesheet" type="text/css" href="css/pic.css"/>
+<script type="text/javascript" src="js/move2.js"></script>
 <script type="text/javascript">SyntaxHighlighter.all();</script>
+<style type="text/css">
+	.jj:after{
+		display: block;
+		content: " ";
+		clear: both;
+	}
+	.jj{
+		zoom:1;
+	}
+</style>
 </head>
 <body>
 <header>
   <div class="quotes">
-  <!--    <p>上帝不会辜负每个努力的孩子</p> -->
-    <p>谢谢你的不喜欢，让我成为更优秀的自己</p>
-    <p>不管失败多少次，都要面对生活，充满希望。</p> 
-   <!--  <p>所谓天才，只不过是把别人喝咖啡的功夫都用在工作上了</p>
-    <p>人的潜能是一座无法估量的丰富的矿藏，只等着我们去挖掘。</p> -->
-   <!--  <div class="text5">哆啦.A梦</div> -->
+      <div id="slq_play" class="slq_playsess">
+        <ol>
+            <li style="background:#259CC7;"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+         </ol>
+         <ul>
+           <li style="z-index:1;"><img src="images/1.jpg"></li>
+           <li><img src="images/2.jpg"></li>
+           <li><img src="images/3.jpg"></li>
+           <li><img src="images/4.jpg"></li>
+           <li><img src="images/5.jpg"></li>
+         </ul>
+      </div>
     <div class="flower"><img src="images/t02.jpg"></div>
   </div>
-  <!--nav begin-->
   <div id="nav">
     <ul>
       <li><a href="index.php">首页</a></li>
@@ -92,7 +111,6 @@ if(mysql_num_rows($queryset_later)){
     </ul>
   </div>
 </header>
-<div class="photowall ff">
 <div class="jj">
 <section class="left">
 		    <div class="boxxx">
@@ -114,7 +132,6 @@ if(mysql_num_rows($queryset_later)){
 		      		</a>
 		      	</li>
 		      	<?php
-
 		      				}
 		      		}
 		      	?>
@@ -139,7 +156,6 @@ if(mysql_num_rows($queryset_later)){
 		      		</a>
 		      	</li>
 		      	<?php
-
 		      				}
 		      		}
 		      	?>
@@ -161,5 +177,4 @@ if(mysql_num_rows($queryset_later)){
 			</div>
 		</section>
 </div>
-
-
+<?php include 'footer.php';?>
