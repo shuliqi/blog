@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en">
+	<meta charset = "UTF-8">
+	<style type="text/css">
+	#canvas{
+		border: 1px solid red;
+		margin-left: 300px;
+	}
+	</style>
+	<script type="text/javascript">
+	window.onload = function  () {
+		var canvas = document.getElementById('canvas');
+	    canvas.width = 800;
+	    canvas.height = 700;
+	    var context = canvas.getContext("2d");
+	    var createLinearGradient = context.createLinearGradient(0,0,0,canvas.height);
+	    createLinearGradient.addColorStop(0.0,"#000");
+	    createLinearGradient.addColorStop(1.0,"blue");
+	    context.fillStyle= createLinearGradient;
+	    context.fillRect(0,0,canvas.width,canvas.height);
+	    for (var i = 0; i < 200; i++) {
+	       var R = Math.random()*5+5;
+	       var x = Math.random()*canvas.width;
+	       var y = Math.random()*canvas.height *0.65;
+	       var a = Math.random()*360;
+	       star(context,R/2.0,R,x,y,a);
+	    }
+	}
+function star(cxt,r,R,x,y,rot){
+ 	cxt.beginPath();
+	 for (var i = 0; i < 5; i++) {
+	    	cxt.lineTo(Math.cos((18+72*i - rot)/180*Math.PI)*R +x,
+	    	  	           -Math.sin((18+72*i - rot)/180*Math.PI)*R +y);
+	    	cxt.lineTo(Math.cos((54+72*i - rot)/180*Math.PI)*r +x,
+	    	  	           -Math.sin((54+72*i - rot)/180*Math.PI)*r +y);
+	 }
+	 // cxt.lineJoin = "miter"; //  linejoin :两条线重合的时候的样式 
+     // cxt.lineJoin = "bevel";  //斜接的效果
+  cxt.closePath();
+	 cxt.lineJoin = "round";   //圆的效果
+	 cxt.lineWidth = 1;
+	 cxt.fillStyle = "yellow";
+	 cxt.fill();
+	 cxt.stroke();
+}
+
+	</script>
+</head>
+<body>
+	<canvas id= "canvas"></canvas>
+</body>
+</html>

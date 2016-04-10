@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .slider,
+    .slider .main,
+    .slider .main .main_i,
+    .slider .main .main_i img{
+        margin: 0 auto;
+        width:100%;
+        height:700px;
+    }
+    /*main main_i*/
+    .slider .main{
+        overflow: hidden;
+        position: relative;
+    }
+    .slider .main .main_i{
+        top:0;
+        right: 50%;
+        position: absolute;
+        z-index: 1;
+        opacity: 0
+        -webkit-transition:all 1s;
+        -o-transition:all 1s;
+        -ms-transition:all 1s;
+        transition:all 1s;
+    }
+    .slider .main .main_i_right {
+       right: -50%;
+    }
+    .slider .main .main_i .caption{
+        position: absolute;
+        z-index: 2;
+        color: white;
+        top:70%;
+        left:15%;
+    }
+    /*Ctrl ctrl_i*/
+    .slider .ctrl{
+        width: 100%;
+        height: 13px;
+        position: relative;
+        text-align: center;
+    }
+    .slider .ctrl .ctrl_i{
+        display: inline-block;
+        width: 150px;
+        height: 13px;
+        border-left: 1px;
+        background: #74E8E8;
+        position: relative;
+
+    } 
+    .slider .ctrl .ctrl_i img{
+        position: absolute;
+        left: 0;
+        width: 150px;
+        bottom: 35px;
+        z-index: 2;
+        opacity: 0;
+        -webkit-transition:all 0.3s;
+        -o-transition:all 0.3s;
+        -ms-transition:all 0.3s;
+        transition:all 0.3s;
+    }
+    /*hover*/
+    .slider .ctrl .ctrl_i:hover{
+        background: #02F5F5;
+    }
+    .slider .ctrl .ctrl_i:hover img{
+        bottom: 15px;
+        opacity: 1;
+        z-index: 6;
+
+    }
+    /*active 图片展现的状态*/
+    .slider .main .main_i_active{
+        right: 0%;
+        z-index: 5;
+        opacity: 1
+    }
+    .slider .ctrl .ctrl_i_active,
+    .slider .ctrl .ctrl_i_active:hover{
+        background: #000;
+    }
+    .slider .ctrl .ctrl_i_active:hover img{
+        opacity: 0;
+    }
+    .slider .main  #main_background{
+      right: 0;
+      z-index: 3;
+    }
+    </style>
+</head>
+<body>
+<div class="slider">
+    <div class="main" id="main_template">
+        <div class="main_i {{css}}" id="main_{{index}}">
+            <div class="caption">
+                <h2>{{h2}}</h2>
+                <h3>{{h3}}</h3>
+            </div>
+            <img src="images/{{index}}.jpg">
+        </div>
+    </div>
+    <div class="ctrl"  id="ctrl_template">
+        <a class="ctrl_i" id="ctrl_{{index}}" href="javascript:sliderSwitch({{index}})"><img src="images/{{index}}.jpg"></a>
+    </div>
+</div>
+<script type="text/javascript">
+    // 通用函数
+    var g =function  (id) {
+        if (id.substr(0,1) == '.') {
+            return document.getElementsByClassName(id.substr(1));
+        } else{
+            return document.getElementById(id);
+        }
+    }
+    // 数据
+    var data = [
+        {img:11,h2:'hthh1',h3:'hshhh1'},
+        {img:12,h2:'hthh2',h3:'hshhh2'},
+        {img:13,h2:'hthh3',h3:'hshhh3'},
+        {img:14,h2:'hthh4',h3:'hshhh4'},
+        {img:15,h2:'hthh5',h3:'hshhh5'},
+        {img:16,h2:'hthh6',h3:'hshhh6'},
+        {img:17,h2:'hthh7',h3:'hshhh7'}
+    ]
+    // 模板函数
+    function getTemplate(){
+        // 获取模板
+        var main_template = g('main_template').innerHTML
+                                .replace(/^\s*/,'')
+                                .replace(/\s*/,'');
+        var ctrl_template = g('ctrl_template').innerHTML
+                                .replace(/^\s*/,'')
+                                .replace(/\s*/,'');
+        // 定义输出变量
+        var main_out = [];
+        var ctrl_out = [];
+        // 替换模板的数据
+        for (var i = 0; i < data.length; i++) {
+            _html_main = main_template
+                        .replace(/{{index}}/g,data[i].img)
+                        .replace(/{{h2}}/g,data[i].h2)
+                        .replace(/{{h3}}/g,data[i].h3)
+                        .replace(/{{css}}/g,['','main_i_right'][i%2]);
+            _html_ctrl = ctrl_template
+                        .replace(/{{index}}/g,data[i].img);
+            main_out.push(_html_main);
+            ctrl_out.push(_html_ctrl);
+        }
+        // 输出替换的模板
+        g('main_template').innerHTML = main_out.join('');
+        g('ctrl_template').innerHTML = ctrl_out.join('');
+        // 创建一个模板 防止白屏
+        g('main_template').innerHTML += main_template
+                                    .replace(/{{index}}/g,'{{index}}') 
+        g('main_{{index}}').id = "main_background";
+    }
+    function sliderSwitch(n){
+        // 获取当前的
+        var now_main = g('main_' +n);
+        var now_ctrl = g('ctrl_' +n);
+        // 获取所有的
+        var claer_main = g('.main_i');
+        var claer_ctrl = g('.ctrl_i');
+        for (var i = 0; i < claer_ctrl.length; i++) {
+            claer_ctrl[i].className = claer_ctrl[i].className.replace('ctrl_i_active',''); 
+            claer_main[i].className = claer_main[i].className.replace('main_i_active',''); 
+        }
+        now_main.className += ' main_i_active';
+        now_ctrl.className += ' ctrl_i_active';
+        // 防止白屏
+        setTimeout(function(){
+            g('main_background').innerHTML = now_main.innerHTML;
+        },1000)
+    }
+    window.onload = function  () {
+        getTemplate();
+        sliderSwitch(15);
+    }
+    
+</script>
+</body>
+</html>

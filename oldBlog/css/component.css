@@ -1,0 +1,94 @@
+a:hover{
+	text-decoration: none;
+}
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'feathericons';
+	src:url('../fonts/feathericons/feathericons.eot?-8is7zf');
+	src:url('../fonts/feathericons/feathericons.eot?#iefix-8is7zf') format('embedded-opentype'),
+		url('../fonts/feathericons/feathericons.woff?-8is7zf') format('woff'),
+		url('../fonts/feathericons/feathericons.ttf?-8is7zf') format('truetype'),
+		url('../fonts/feathericons/feathericons.svg?-8is7zf#feathericons') format('svg');
+}
+
+.grid {
+	margin: 0;
+	width: 100%;
+/*	padding-bottom:5%;*/
+	list-style: none;
+	text-align: center;
+}
+.grid figure {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  overflow: hidden;
+  margin: -0.135em;
+  width: 22%;
+  background-color: white;
+  margin-left: 2%;
+  margin-top: 30px;
+  height: 370px;
+  text-align: left;
+  cursor: pointer;
+}
+.grid figure img {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 75%;
+	opacity: 0.8;
+}
+.grid figure img:hover {
+	opacity: 1;
+}
+.effect-zoe p{
+	font-size: 20px;
+	line-height: 100px;
+	text-align: center;
+
+}
+.effect-zoe p:hover{
+   color:#E74851;
+
+}
+.effect-zoe span{
+	padding-left: 10px;
+
+
+}
+@media screen and (max-width: 69.5em) {
+	.grid figure {
+		width: 45%;
+	}	
+
+	.grid figure figcaption {
+		font-size: 90%;
+	}
+}
+
+
+@media screen and (max-width: 25.5em) {
+
+	.grid figure {
+		width: 95%;
+	}
+}
+.effect h4{
+	margin: 27px 9%;
+}
+.effect span{
+  float: right;
+  margin-right: 10%;
+  display: block;
+  width: 50px;
+  text-align: center;
+  height: 28px;
+  letter-spacing: 3px !important;
+  margin-top: -51px;
+}
+.effect span a:hover{
+	color: #E74851!important;
+	text-decoration: none;
+}

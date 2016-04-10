@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+#div1{
+	width: 200px;
+	height: 200px;
+	background-color:blue;
+	position: absolute;
+}
+.box{
+	border: 1px dashed #000;
+	position: absolute;
+}
+</style>
+<script>
+window.onload = function  () {
+	var oDiv = document.getElementById('div1');
+	var div1X = 0 ;
+	var div1Y = 0;
+	oDiv.onmousedown = function (ev){                                         //onmousedown  鼠标点下去
+		  // var oBox = document.createElement('div');
+		  // oBox.className = 'box';
+		  // oBox.style.width = oDiv.offsetWidth +'px';
+		  // oBox.style.height = oDiv.offsetHeight +'px';
+		  // oBox.style.left = oDiv.offsetLeft +'px';
+		  // oBox.style.top = oDiv.offsetTop +'px';
+		  // document.body.appendChild(oBox);
+		  var oEvent = ev || event;                                             //兼容性的  获取鼠标
+		  div1X = oEvent.clientX - oDiv.offsetLeft;                             //oEvent.clientX鼠标的横坐标
+		  div1Y = oEvent.clientY - oDiv.offsetTop; 
+		  if (oDiv.setCapture) {                                                //oEvent.clientY鼠标的纵坐标
+		      oDiv.onmousemove = mouseMove;
+		      oDiv.onmouseup = 
+	        oDiv.setCapture();
+          return false;                                                        //阻止 火狐 bug的默认功能
+	    }
+	    else {
+	  	  	document.onmousemove = mouseMove;
+		      document.onmouseup = mouseUp;
+          return false;                                                            //阻止 火狐 bug的默认功能
+	    }
+  }
+  function mouseMove (ev) {                                                      //  onmousemove鼠标移动的
+		     	var oEvent = ev || event;
+			    var L = oEvent.clientX - div1X;
+			    var T = oEvent.clientY - div1Y;
+			    var R = document.documentElement.clientWidth - oDiv.offsetWidth;
+			    var B = document.documentElement.clientHeight - oDiv.offsetHeight;
+
+			                                                                     //  为了防止用户将盒子丢出去
+			    if (L < 0) {
+				    L = 0;
+			    } 
+			   else if(L > R ){
+				    L = R;
+			   };
+			   if (T < 0) {
+				    T = 0;
+			    } 
+			   else if(T > B ){
+				    T = B;
+			   };
+			   oDiv.style.left = L + 'px';
+			   oDiv.style.top = T + 'px'; 
+		    }
+ function mouseUp() {                                                             //onmouseup  鼠标抬起
+			  oDiv.onmousemove = null;
+			  oDiv.onmouseup = null;
+			  if (oDiv.releaseCapture) { 
+		 	  oDiv.releaseCapture();
+		 	  }
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="div1"></div>
+</body>
+</html>

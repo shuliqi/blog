@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<style>
+#div1{
+  width: 400px;
+  height: 400px;
+  margin: 0px auto;
+  padding: 1px;
+}
+#div1 div{
+   width: 400px;
+  height:100px;
+  margin: 0px auto;
+  background: #898;
+  margin-top: 424px
+}
+li {
+  width: 100px;
+  height:100px;
+  border: 1px solid white;
+  float: left;
+  list-style: none;
+  text-align: center;
+  background: #000;
+  color: white;
+}
+.text{
+  text-align: center;
+}
+.active{
+  background: yellow;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+  var arr=["舒丽琪1","舒丽琪2","舒丽琪3","舒丽琪4","舒丽琪5","舒丽琪6","舒丽琪7","舒丽琪8","舒丽琪9","舒丽琪10","舒丽琪11","舒丽琪12",];
+  var oDiv=document.getElementById('div1');
+  var aAr=oDiv.getElementsByTagName('li')
+  var oText=oDiv.getElementsByTagName('div')[0];
+  for (var i = 0; i < aAr.length; i++) {
+      aAr[i].shu=i;
+      aAr[i].onmouseover=function(){
+          for (var i = 0; i < aAr.length; i++) {
+            aAr[i].className='';
+          };
+       this.className='active';   
+       oText.innerHTML='<h1>shuliqi'+(this.shu+1)+'</h1><p><h2>'+arr[this.shu]+'</h2></p>'
+      }
+  };
+
+}
+</script>
+</head>
+<body>
+<div id="div1">
+ <ul>
+   <li><h1>一</h1></li>
+   <li><h1>二</h1></li>
+   <li><h1>三</h1></li>
+   <li><h1>四</h1></li>
+   <li><h1>五</h1></li>
+   <li><h1>六</h1></li>
+   <li><h1>七</h1></li>
+   <li><h1>八</h1></li>
+   <li><h1>九</h1></li>
+   <li><h1>十</h1></li>
+   <li><h1>十一</h1></li>
+   <li><h1>十二</h1></li>
+ </ul>
+ <div class="text"></div>
+</div>
+
+</body>
+</html>

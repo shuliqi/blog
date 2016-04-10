@@ -1,0 +1,57 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+}
+.contact{
+	width: 100%;
+	height: 100%;
+	background: #CCCCCC;
+	background: url(../images/bg_header-home_v2.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+}
+.contact ul{
+	width: 700px;;
+}
+.contact ul li{
+	border-bottom: 1px solid #CCCCCC;
+}
+.contact ul li label{
+	width: 100px;
+	display: inline-block;
+	float: left;
+}
+.contact ul li input[type=text]{
+	width: 220px;
+	height: 20px;
+	border-radius: 5px;
+	border: 1px solid #000;
+	background: url(../images/xinhao.png) no-repeat  #FFF 98%;
+	padding: 3px 8px;
+
+}
+.contact ul li input[type=password]{
+	width: 220px;
+	height: 20px;
+	border-radius: 5px;
+	border: 1px solid #000;
+	background: url(../images/xinhao.png) no-repeat  #FFF 98%;
+	padding: 3px 8px;
+
+}
+
+.contact ul li input:focus{
+	border-color: cyan;
+	background: url(../images/error.png) no-repeat  #FFF 98%;
+}
