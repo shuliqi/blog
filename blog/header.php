@@ -28,16 +28,22 @@
            <li><img src="images/5.jpg"></li>
          </ul>
       </div>
-    <div class="flower"><!-- <img src="images/t02.jpg"> --></div>
+    <!-- <div class="flower"><img src="images/t02.jpg"></div> -->
   </div>
   <div id="nav">
     <ul>
-      <li><a href="index.php">首页</a></li>
+      <li class="dd"><a href="index.php">首页</a></li>
       <li><a href="web.php">前端</a></li>
       <li><a href="technology.php">技术</a></li>
       <li><a href="case.php">案例</a></li>
       <li><a href="my.php">个人</a></li>
-      <li id="search"><img src="images/shou2.png"></li>
-    </ul>
+      </ul>
+      <form id="search" >
+        <input id="button" type="text" />
+        <input id="submit" type="submit" value="搜索"/>
+      </form>
+      <div id="searchsuggest">
+        <div id="search-suggest" > </div>
+      </div>
   </div>
 </header>

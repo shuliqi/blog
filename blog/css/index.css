@@ -1,6 +1,4 @@
-html{
 
-}
 /* CSS Document */
 * { margin: 0; padding: 0 }
 a:link, a:visited { text-decoration: none; }
@@ -28,7 +26,8 @@ header { width: 100%; margin: auto; border-bottom: #3c7a48 1px solid }
 #nav ul li { 
 	float: left;
 	display: inline; 
-	margin: 0 20px; 
+	margin: 0 20px;
+  font-family: 微软雅黑; 
 	text-align: center; 
 }
 #nav ul li a { color: #fff; }
@@ -558,4 +557,71 @@ h4{
 .jj{
   width: 82%;
   margin:0px auto;
+}
+
+/*搜索的部分*/
+/*#search input{
+  width: 250px;
+  height: 25px;
+  margin-right: 130px;
+}*/
+#search{
+ width: 300px !important;
+  margin-top: -50px;
+  width:200px;
+  height: 50px;
+  margin-right: 17% !important;
+}
+#search #button{
+  width: 80%;
+  height: 30px;
+  float: left;
+  margin-top: 12px;
+  outline: none;
+  border:none;
+}
+#search #submit{
+  width: 20%;
+  height: 30px;
+  margin-top: 12px;
+  float: left;
+  border: none;
+  outline: none;
+  background-color: #3DC2F2;
+}
+#searchsuggest{
+  position: absolute;
+  z-index: 30000;
+  width:300px;
+  margin-top: -6px;
+  right: 0px;
+  margin-right: 17%;
+}
+#search-suggest a{
+  width: 100%;
+  color: #000;
+  font-family: 微软雅黑;
+  background: white;
+}
+#search-suggest a{
+  width: 98%;
+  line-height: 39px;
+  height: 36px;
+  float: left;
+  padding-left: 2%;
+  text-align: left;
+  font-size: 15px;
+  line-height: 20px
+  letter-spacing:5px;
+}
+#search-suggest a:hover{
+  color: #259CC7;
+/*  border:1px solid #F6454E; */
+  text-decoration: none;
+}
+.search-suggest{
+  border:1px solid #ccc !important;
+}
+.dd{
+  margin-left:12px;
 }
