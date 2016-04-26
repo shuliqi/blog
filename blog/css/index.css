@@ -160,20 +160,71 @@ footer p a:hover{ text-decoration:underline}
 	float:left; 
 	margin-right:10px
 }
-.content p{ margin:0 0 10px 0; line-height:1.6;text-overflow: ellipsis;}
-.read{ width:100%;   /*margin: 150px -21px*/; padding:10px 0; text-align:right;}
-.read a{ background:#69CBE8; color:#FFF; padding:5px; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s; }
-.read a:hover{ text-decoration:underline}
-.datetime{ margin:10px 0}
-aside{ float:right;   width: 25%; overflow: hidden}
-aside h2{ font-size:14px; margin:10px 0;color:#333; }
-.about{ background:#FFF; padding:4px; border-radius:8px}
-.vcard p{ line-height:25px}
-.share{ margin:10px 0; }
-aside ul{ padding:10px 0; list-style:none}
-aside ul li{ line-height:22px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
-aside ul li a{ color: #333; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s; }
-aside ul li a:hover{ padding-left:0px }
+.content p{ 
+  margin:0 0 10px 0; 
+  line-height:1.6;
+  text-overflow: ellipsis;
+  height: 150px;
+}
+.read{ 
+  width:100%;
+  padding:10px 0; 
+  text-align:right;
+}
+.read a{ 
+  background:#69CBE8; 
+  color:#FFF; 
+  padding:5px; 
+  -webkit-transition: all 0.5s; 
+  -moz-transition: all 0.5s; 
+  -o-transition: all 0.5s; 
+}
+.read a:hover{ 
+  text-decoration:underline
+}
+.datetime{ 
+  margin:10px 0
+}
+aside{ 
+  float:right;   
+  width: 25%; 
+  overflow: hidden
+}
+aside h2{ 
+  font-size:14px; 
+  margin:10px 0;
+  color:#333; 
+}
+.about{ 
+  background:#FFF; 
+  padding:4px; 
+  border-radius:8px
+}
+.vcard p{ 
+  line-height:25px
+}
+.share{ 
+  margin:10px 0; 
+}
+aside ul{ 
+  padding:10px 0; 
+  list-style:none
+}
+aside ul li{ 
+  line-height:22px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+aside ul li a{ 
+  color: #333; 
+  -webkit-transition: all 0.5s; 
+  -moz-transition: all 0.5s; 
+  -o-transition: all 0.5s; 
+}
+aside ul li a:hover{ 
+  padding-left:0px 
+}
 #search{
 	float: right !important;
 	margin-right: 20% !important;
@@ -256,8 +307,18 @@ h4{
   border-bottom: 1px solid #ccc;
 }
 .template { width: 100%; }
-.template h3 { border-bottom: #FFF 1px solid; width: 100%; overflow: hidden; font-size: 14px; margin: 0 0 10px; font-family: "Î¢ÈíÑÅºÚ"; display: block; clear: both; }
-.template h3 p {  background: #259CC7;
+.template h3 { 
+  border-bottom: #FFF 1px solid; 
+  width: 100%; 
+  overflow: hidden; 
+  font-size: 14px; 
+  margin: 0 0 10px; 
+  font-family: "Î¢ÈíÑÅºÚ"; 
+  display: block; 
+  clear: both; 
+}
+.template h3 p {  
+  background: #259CC7;
   width: 180px;
   height: 28px;
   margin: 15px 0 0 0px;
@@ -265,15 +326,45 @@ h4{
   color: #fff;
   text-align: center;
   box-shadow: #999 4px 5px 1px;}
-.template h3 p span { color: #000; }
-.template ul { overflow: hidden; }
-.template ul li { margin: 3px; float: left; display: block; padding: 5px 5px 6px 5px; -webkit-transition: all 1s; -moz-transition: all 1s; -o-transition: all 1s; transition: all 1s; }
+.template h3 p span { 
+  color: #000; 
+}
+.template ul { 
+  overflow: hidden; 
+}
+.template ul li { 
+  margin: 3px; 
+  float: left; 
+  display: block;
+  padding: 5px 5px 6px 5px; 
+  -webkit-transition: all 1s; 
+  -moz-transition: all 1s; 
+  -o-transition: all 1s; 
+  transition: all 1s; 
+}
 .template li img {   
 	  width: 148px;
-    height: 100px; background: #FFF; padding: 4px; box-shadow: 0px 0px 2px rgba(0,0,0,.5); display: block; }
-.template li span {   color: #6AA7D3;
-font-weight: bold; display: block; text-align: center; margin-top: 5px; width: 142px; overflow: hidden; text-overflow: ellipsis; height: 14px }
-.template li:hover {   background: #E5F3F7; padding: 5px 5px 6px 5px; }
+    height: 100px; 
+    background: #FFF; 
+    padding: 4px; 
+    box-shadow: 0px 0px 2px rgba(0,0,0,.5); 
+    display: block; 
+  }
+.template li span {
+  color: #6AA7D3;
+  font-weight: bold; 
+  display: block; 
+  text-align: center; 
+  margin-top: 5px; 
+  width: 142px; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  height: 14px 
+}
+.template li:hover {   
+  background: #E5F3F7; 
+  padding: 5px 5px 6px 5px; 
+}
 .template li:hover img {
 	opacity: 0.4;
 }
